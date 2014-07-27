@@ -4,19 +4,95 @@ author: "steve"
 date: "July 27, 2014"
 output: html_document
 ---
+######## script agenda ########
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+#  1) create test dataset ('TEST_DATASET') from various text files authered by UCI Machine Learning Repository
+#  2) creation of a similar train dataset('TRAIN_DATASET').
+#  3) merging of train & test sets into much larger dataset ('MERGED_DATA_SET').
+#  4) extracting NON-mean() and NON-standard deviation from MERGED_DATA_SET';  renamed to 'EXTRACTED_SET'.
+#  5) creating smaller dataset 'GROUP_MEAN', which groups subject/persons and activity and calculates average of variable observations for each group form.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r}
-summary(cars)
-```
+#######################
 
-You can also embed plots, for example:
 
-```{r, echo=FALSE}
-plot(cars)
-```
+#  (1) CREATION OF TEST DATA SET
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+           # reading test data of measured variables
+            Xtest <- read.table("X_test.txt")
+
+            # reading in activities done per observation window in test set
+            ytest_labels <- read.table("y_test.txt") 
+
+            # reading in person/subject per observation window of test set            
+            persons_id <- read.table("subject_test.txt") 
+
+            # reading in labels of measured variables for each feature vector (i.e., measurements/data columns 
+for both test and train sets
+            # assigning column names to subject/(persons_id), activity(ytest_labels), measurement(Xtest))
+            # using 'cbind' function to form TEST DATASET by combining columns from above
+
+
+      TEST_DATASET
+
+
+##################################
+
+
+#  (2) CREATION OF TRAIN DATA SET
+
+####    reading train data of measured variables
+            Xtrain <- read.table("X_train.txt")
+
+####    reading in activity done per observation window in train set
+            ytrain_labels <- read.table("y_train.txt") 
+
+####    reading in person/subject per observation window of train test set
+            persons_id2 <- read.table("subject_train.txt") 
+
+####    reading in labels of measured variables for each feature vector (i.e., test and train set data columns) 
+            colnames(Xtrain) <- features2
+            colnames(ytrain_labels) <- "Activity"
+            colnames(persons_id2) <- "Person_ID"
+
+            # using 'cbind' function to form TRAIN DATASET by combining column vector
+
+            TRAIN_DATASET 
+
+
+##################################
+
+
+#  (3) MERGED COMPLETE TRAIN & TEST DATA SETS (w/all measurements included)
+
+            #   merging train & test sets using 'rbind' function
+
+##################################
+
+
+#  (4) EXTRACTING NON-MEAN & STANDARD DEVIATION MEASUREMENTS/VARIABLES FROM MERGED_DATA_SET
+#  NEW DATASET FORMED >>  'MERGED_DATA_SET_no.2' (only mean & std vars)
+
+            # manually creating list of mean & standard measurements/variables to retain
+            #  forming new merged dataset ('MERGED_DATA_SET_no2') with non-mean/std variables removed--using %in% operator, colnames                               
+               function, and indexing
+            #  replacing activity code numbers with actual activity names(e.g. replacing "1" with "WALKING")                           
+            
+            MERGED_DATA_SET_no2
+
+##################################
+
+
+#   (5) GROUPING SUBJECTS (1:30 PERSONS) WITH ACTIVITY PERFORMED (6 DIFFERENT ACTIVITIES)
+
+            # GROUPED MEAN: CALCULATION OF EACH GROUP MEAN FOR EACH MEASUREMENT VARIABLE IN FROM 'EXTRACTED_SET'.
+            # Clarifying example of 'group': a group, for example, is the combined observations of person no.1 
+              performing activity no.1 (walking).
+            # Variable Measurements from the group are averaged into a total mean for the group of the variable measurements.
+            # groupings performed using aggregate function.
+      
+            GROUP_MEAN
+
+###  2 Outputs printed:  2 datasets:  (1) GROUP_MEAN set, required by project; (2) MERGED_DATA_SET, set from GROUP is derived.
+
+
