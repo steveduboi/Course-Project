@@ -1,4 +1,4 @@
-
+###  STEP 5 FINAL RESULT;  Small Dataset with Calculated Total Means for each person per activity per variable measurement 
       
       Person._ID         Activity    tBodyAcc-mean()-X tBodyAcc-mean()-Y tBodyAcc-mean()-Z  tBodyAcc-std()-X
 1            1             LAYING         0.2215982      -0.040513953       -0.11320355     -0.928056469
@@ -4261,4 +4261,4 @@
 149                 -0.3427074700              -0.5144685600
 150                 -0.5061405600              -0.6086428200
 151                 -0.5751145600              -0.5945809000
- [ reached getOption("max.print") -- omitted 10148 rows ]
+
