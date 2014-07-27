@@ -100,8 +100,6 @@ TEST_DATASET_subset <- combine1b[1:20, 1:5]
       MERGED_DATA_SET_no2$Activity <- gsub("5", "STANDING", MERGED_DATA_SET_no2$Activity)
       MERGED_DATA_SET_no2$Activity <- gsub("6", "LAYING", MERGED_DATA_SET_no2$Activity)                              
       
-print("### MERGED_DATA_SET_no.2 - only mean & std vars")
-MERGED_DATA_SET_no2 
 
 ##################################
 
@@ -124,10 +122,21 @@ MERGED_DATA_SET_no2
 
             GROUPED_MEAN <- agg
 
+print("### GROUPED_MEAN")
 print("###  STEP 5 FINAL RESULT;  Small Dataset with Calculated Total Means for each person per activity per variable measurement ") 
+print("")
+print("")
 
 GROUPED_MEAN
 
+print("### MERGED_DATA_SET_no.2")
+print("### merger of original train & test datasets")
+print("### with non-mean & non-std variable measurements removed")
+print("")
+print("")
 
-sink("run_analysis_datasets_output5.txt", append = FALSE, split = FALSE)
+MERGED_DATA_SET_no2 
+
+sink("run_analysis_datasets_output7.txt", append = FALSE, split = FALSE)
+
 

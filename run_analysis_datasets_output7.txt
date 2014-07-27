@@ -2131,7 +2131,10 @@
 150                 -0.61757881                -0.64550394
 151                 -0.63466508                -0.69393052
  [ reached getOption("max.print") -- omitted 29 rows ]
+[1] "### MERGED_DATA_SET_no.2"
 [1] "### merger of original train & test datasets"
+[1] "### with non-mean & non-std variable measurements removed"
+[1] ""
 [1] ""
       Person_ID           Activity tBodyAcc-mean()-X tBodyAcc-mean()-Y tBodyAcc-mean()-Z tBodyAcc-std()-X
 1             1           STANDING       0.288584510     -2.029417e-02     -1.329051e-01    -9.952786e-01
@@ -4262,4 +4265,3 @@
 150                 -0.5061405600              -0.6086428200
 151                 -0.5751145600              -0.5945809000
  [ reached getOption("max.print") -- omitted 10148 rows ]
-
