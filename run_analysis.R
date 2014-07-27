@@ -137,6 +137,5 @@ print("")
 
 MERGED_DATA_SET_no2 
 
-sink("run_analysis_datasets_output7.txt", append = FALSE, split = FALSE)
 
 
